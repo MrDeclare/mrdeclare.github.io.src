@@ -1,0 +1,26 @@
+{
+  "name": "mrdeclare.github.io.src",
+  "version": "0.0.1",
+  "description": "Source for github page mrdeclare.github.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrDeclare/mrdeclare.github.io.src.git"
+  },
+  "keywords": [
+    "github",
+    "page",
+    "assemble",
+    "blog",
+    "development"
+  ],
+  "author": "MrDeclare <noxdeclare@gmail.com> (http://mrdeclare.github.io)"
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/MrDeclare/mrdeclare.github.io.src/issues"
+  },
+  "homepage": "https://github.com/MrDeclare/mrdeclare.github.io.src#readme"
+}
