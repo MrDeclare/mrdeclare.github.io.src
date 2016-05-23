@@ -1,6 +1,6 @@
 {
   "name": "mrdeclare.github.io.src",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Source for github page mrdeclare.github.io",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,26 @@
     "blog",
     "development"
   ],
-  "author": "MrDeclare <noxdeclare@gmail.com> (http://mrdeclare.github.io)"
+  "author": "MrDeclare <noxdeclare@gmail.com> (http://mrdeclare.github.io)",
   "license": "CC-BY-NC-SA-4.0",
   "bugs": {
     "url": "https://github.com/MrDeclare/mrdeclare.github.io.src/issues"
   },
-  "homepage": "https://github.com/MrDeclare/mrdeclare.github.io.src#readme"
+  "homepage": "https://github.com/MrDeclare/mrdeclare.github.io.src#readme",
+  "dependencies": {
+    "assemble": "0.12.0",
+    "grunt": "1.0.1",
+    "grunt-assemble": "0.4.0",
+    "grunt-contrib-clean": "1.0.0",
+    "load-grunt-tasks": "3.5.0"
+  },
+  "devDependencies": {
+    "assemble": "0.12.0",
+    "grunt": "1.0.1",
+    "grunt-assemble": "0.4.0",
+    "grunt-contrib-connect": "1.0.2",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-contrib-clean": "1.0.0",
+    "load-grunt-tasks": "3.5.0"
+  }
 }
