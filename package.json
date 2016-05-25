@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/MrDeclare/mrdeclare.github.io.src#readme",
   "dependencies": {
+    "metalsmith": "2.1.0"
   },
   "devDependencies": {
     "grunt": "1.0.1",

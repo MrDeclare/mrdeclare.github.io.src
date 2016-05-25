@@ -79,5 +79,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('production', productionTasks);
 
-    grunt.registerTask('default', ["production"]);
+    grunt.registerTask('default', ["clean"]);
 };
