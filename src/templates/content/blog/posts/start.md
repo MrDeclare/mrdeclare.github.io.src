@@ -1,3 +1,7 @@
+---
+template: markdown.hbt
+---
+
 # Getting Started
 Lorem Ipsum...
 
