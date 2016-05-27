@@ -6,22 +6,71 @@ var config = {
 };
 
 var Metalsmith = require('metalsmith');
-var layouts  = require('metalsmith-layouts');
+
 var markdown   = require('metalsmith-markdown');
+var layouts  = require('metalsmith-layouts');
 var inPlaceTemplates = require('metalsmith-in-place');
+
+var collections = require('metalsmith-collections');
+var permalinks = require('metalsmith-permalinks');
 
 Metalsmith(__dirname) //allegedly Metalsmith should look for a src folder itself
     .source('./src/templates/content')
-    .metadata({
-        partials: {
-            button: '../partials/button', //starts from the laouts folder, depends on .use(templates)
-        }
-    })
+    // .metadata({
+    //     partials: {
+    //         button: '../partials/button', //starts from the laouts folder, depends on .use(templates)
+    //     }
+    // })
 
     //===================================================================
     //plugin chain
     //===================================================================
+
+    //add original filenames to the metadata
+    .use(function(files, metalsmith, done) {
+        var path = require('path');
+
+        Object.keys(files).forEach(function (file) {
+            var extname = path.extname(file);
+            var basename = path.basename(file, extname);
+            files[file].original_basename = basename;
+            files[file].original_extname = extname;
+        });
+        done();
+    })
+
+    .use(collections({
+        //pages: {
+        //    pattern: 'content/pages/*.md'
+        //},
+        posts: {
+            pattern: 'blog/posts/*.md',
+            sortBy: 'date',
+            reverse: true
+        }
+    }))
+
+    // Log plugin!
+    // .use(function(files, metalsmith, done) {
+    //     console.log('Files: ');
+    //     console.log(files);
+    //
+    //     console.log();
+    //     console.log('Metalsmith: ');
+    //     console.log(metalsmith);
+    //
+    //     console.log(' ');
+    //     console.log('Metalsmith metadata.collections: ');
+    //     console.log(metalsmith._metadata.collections);
+    //
+    //     done();
+    // })
+
     .use(markdown()) //order counts, befor all other seems to be right
+
+    .use(permalinks({
+        pattern : "blog/posts/:date/:original_basename"
+    }))
 
     .use(layouts({
         "engine": 'handlebars',

@@ -1,5 +1,7 @@
 ---
 template: markdown.hbt
+date: 2014-04-18
+title: "Getting started"
 ---
 
 # Getting Started

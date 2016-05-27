@@ -1,6 +1,6 @@
 {
   "name": "mrdeclare.github.io.src",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Source for github page mrdeclare.github.io",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "keywords": [
     "github",
     "page",
-    "assemble",
+    "metalsmith",
     "blog",
     "development"
   ],
@@ -26,9 +26,11 @@
   "dependencies": {
     "handlebars": "4.0.5",
     "metalsmith": "2.1.0",
+    "metalsmith-collections": "0.7.0",
     "metalsmith-in-place": "1.4.4",
     "metalsmith-layouts": "1.6.5",
-    "metalsmith-markdown": "0.2.1"
+    "metalsmith-markdown": "0.2.1",
+    "metalsmith-permalinks": "0.5.0"
   },
   "devDependencies": {
     "grunt": "1.0.1",
