@@ -1,5 +1,5 @@
 ---
-template: markdown.hbt
+layout: markdown.hbt
 date: 2014-04-18
 title: "Getting started"
 ---
@@ -13,3 +13,5 @@ Lorem Ipsum...
 ``` js
 console.log('Hello world!');
 ```
+
+Lets do lets do it

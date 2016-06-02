@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 
         config: {
             src: 'src',
-            dist: 'dist'
+            dest: 'dist'
         },
 
         connect: {
@@ -28,56 +28,29 @@ module.exports = function (grunt) {
 
         clean: {
             'html': [
-                '<%= config.dist %>/**/*.html'
+                '<%= config.dest %>/**/*.html'
             ]
-        },
-
-        assemble: {
-            options: { //global options
-                flatten: false
-            },
-
-            hbsProduction: {
-                expand: true,
-                options: {
-                    layoutdir: '<%= config.src %>/assemble/layouts',
-                    layout: 'default.hbs',
-                    data: [
-                        '<%= config.src %>/assemble/data/site.yml',
-                        '<%= config.src %>/assemble/data/production/site.yml'
-                    ],
-                    partials: '<%= config.src %>/assemble/partials/**/*.hbs'
-                },
-                cwd: '<%= config.src %>/assemble/pages/',
-                dest: '<%= config.dist %>/',
-                src: '**/*.hbs'
-            }
         },
 
         /** Watcher Tasks */
         watch: {
-            hbs: {
+            "smith-content": {
                 files: [
-                    '<%= config.src %>/assemble/**/*.{hbs,yml}'
+                    '<%= config.src %>/templates/**/*.{hbs,hbt,md}'
                 ],
                 tasks: [
-                    'assemble:hbsProduction'
+                    'shell:build-smith'
                 ]
             }
+        },
+
+        shell : {
+            "build-smith" : "node index.js"
         }
 
     });
 
+    //grunt.registerTask('production', productionTasks);
 
-    var productionTasks = [
-        'clean',
-
-        //assemble build
-        'assemble:hbsProduction'
-    ];
-
-
-    grunt.registerTask('production', productionTasks);
-
-    grunt.registerTask('default', ["clean"]);
+    grunt.registerTask('default', ["watch:smith-content"]);
 };

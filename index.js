@@ -7,6 +7,7 @@ var config = {
 
 var Metalsmith = require('metalsmith');
 
+var drafts = require('metalsmith-drafts');
 var markdown   = require('metalsmith-markdown');
 var layouts  = require('metalsmith-layouts');
 var inPlaceTemplates = require('metalsmith-in-place');
@@ -38,6 +39,8 @@ Metalsmith(__dirname) //allegedly Metalsmith should look for a src folder itself
         });
         done();
     })
+
+    .use(drafts())
 
     .use(collections({
         //pages: {

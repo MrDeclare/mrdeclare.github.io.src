@@ -1,0 +1,194 @@
+<style>
+    .header-navigation {
+        height : 3.2em;
+    }
+
+    /*Strip the ul of padding and list styling*/
+    /*
+    .header-navigation ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        position: absolute;
+    }
+    */
+    /*Strip the ul of padding and list styling*/
+    .header-navigation ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        position: static;
+        display: none;
+    }
+
+    /*Create a horizontal list with spacing*/
+    .header-navigation li {
+        display:inline-block;
+        float: left;
+        margin-right: 1px;
+    }
+
+    /*Style for menu links*/
+    .header-navigation li a {
+        display:block;
+        min-width:140px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        background: #2f3036;
+        text-decoration: none;
+    }
+
+    /*Hover state for top level links*/
+    .header-navigation li:hover a {
+        background: #19c589;
+    }
+
+    /*Style for dropdown links*/
+    .header-navigation li:hover ul a {
+        background: #f3f3f3;
+        color: #2f3036;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    /*Hover state for dropdown links*/
+    .header-navigation li:hover ul a:hover {
+        background: #19c589;
+        color: #fff;
+    }
+
+    /*Hide dropdown links until they are needed*/
+    .header-navigation li ul {
+        display: none;
+    }
+
+    /*Make dropdown links vertical*/
+    .header-navigation li ul li {
+        display: block;
+        float: none;
+    }
+
+    /*Prevent text wrapping*/
+    .header-navigation li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+    }
+
+    /*Display the dropdown on hover*/
+    .header-navigation ul li a:hover + .hidden, .hidden:hover {
+        display: block;
+    }
+
+    /*Style 'show menu' label button and hide it by default*/
+    .header-navigation .show-menu {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-decoration: none;
+        color: #fff;
+        background: #19c589;
+        text-align: center;
+        padding: 10px 0;
+        display: none;
+    }
+
+    /*Hide checkbox*/
+    .header-navigation input[type=checkbox]{
+        display: none;
+    }
+
+    /*Show menu when invisible checkbox is checked*/
+    .header-navigation input[type=checkbox]:checked ~ #menu{
+        display: block;
+    }
+
+
+    /*Responsive Styles*/
+
+    @media screen and (max-width : 768px){
+    }
+        /*Display 'show menu' link*/
+        .header-navigation .show-menu {
+            display:block;
+        }
+    }
+
+    /*Create a horizontal list with spacing*/
+    .header-navigation li {
+        margin-bottom: 1px;
+    }
+
+    /*Make all menu links full width*/
+    .header-navigation ul li, li a {
+        width: 100%;
+    }
+
+    .header-navigation .show-menu {
+        display:block;
+    }
+
+    @media screen and (min-width : 768px){
+        .header-navigation ul {
+            position: absolute;
+            position: static;
+            display: block;
+        }
+
+        .header-navigation li {
+            display:inline-block;
+            //float: left;
+            margin-right: 1px;
+            margin-bottom: 0;
+        }
+
+        .header-navigation ul li, li a {
+            width: initial;
+        }
+
+        .header-navigation .show-menu {
+            display:none;
+        }
+    }
+</style>
+<nav class="header-navigation">
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/about">About<!-- ￬--></a>
+            <!--
+            <ul class="hidden">
+                <li><a href="#">Who I Am</a></li>
+                <li><a href="#">What I Do</a></li>
+            </ul>
+            -->
+        </li>
+        <li><a href="/cv">C.V.</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <!--
+        <li>
+            <a href="#">Portfolio ￬</a>
+            <ul class="hidden">
+                <li><a href="#">Photography</a></li>
+                <li><a href="#">Web & User Interface Design</a></li>
+                <li><a href="#">Illustration</a></li>
+            </ul>
+        </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        -->
+    </ul>
+</nav>
+<!--
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/cv">CV</a></li>
+        <li><a href="/blog">Blog</a></li>
+    </ul>
+</nav>
+-->

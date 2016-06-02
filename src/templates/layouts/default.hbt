@@ -1,27 +1,50 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <title>{{title}}</title>
-  </head>
-      <body>
-          <nav>
-              <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="/cv">CV</a></li>
-                  <li><a href="/blog">Blog</a></li>
-              </ul>
-          </nav>
-          <main class="main-body">
-              {{{ contents }}}
-          </main>
-          <footer>
-              {{> button}}
-              <ul>
-                  <li><a href="mailto:noxdeclare@gmail.com">email</a></li>
-                  <li><a href="https://github.com/mrdeclare">github.com/mrdeclare</a></li>
-              </ul>
-          </footer>
-      </body>
-  </html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+
+    <style>
+        body {
+            background: white;
+        }
+
+        .site-header nav {
+            background: #00BCD4;
+            color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        .main-body {
+            padding: 0.6em;
+        }
+
+        body footer {
+            background: #73BBAB;
+            height: 100%;
+        }
+    </style>
+</head>
+    <body>
+        <header class="site-header">
+            {{> header-navigation}}
+        </header>
+
+        <main class="main-body">
+            {{{ contents }}}
+        </main>
+        <footer class="site-footer">
+
+            <ul>
+                <li><a href="mailto:noxdeclare@gmail.com">email</a></li>
+                <li><a href="https://github.com/mrdeclare">github.com/mrdeclare</a></li>
+            </ul>
+
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        </footer>
+    </body>
+</html>

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>{{title}}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+
 </head>
     <body>
         <nav>
@@ -14,13 +16,18 @@
             </ul>
         </nav>
         <main class="main-body">
-            {{{ contents }}}
+            <section class="markdown">
+                {{{ contents }}}
+            </section>
         </main>
         <footer>
             <ul>
                 <li><a href="mailto:noxdeclare@gmail.com">email</a></li>
                 <li><a href="https://github.com/mrdeclare">github.com/mrdeclare</a></li>
             </ul>
+
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
         </footer>
     </body>
 </html>
